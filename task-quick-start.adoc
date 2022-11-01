@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: task-quick-start.html 
+keywords: quick start, set up cloud volumes service 
+summary: Führen Sie diese Schritte schnell durch, oder folgen Sie den Links, um weitere Informationen zu erhalten. 
+---
+= Schnellstart für Cloud Volumes Service für Google Cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Führen Sie diese Schritte schnell durch, oder folgen Sie den Links, um weitere Informationen zu erhalten.
+
+[role="quick-margin-para"]
+Aktivieren Sie bei Google die Cloud Volumes Service für GCP-API, damit BlueXP die Abonnement- und Cloud-Volumes managen kann.
+
+[role="quick-margin-para"]
+link:task-set-up-google-cloud.html["So aktivieren Sie die API"].
+
+[role="quick-margin-para"]
+Erstellen Sie in Google ein Servicekonto und eine Rolle, damit BlueXP auf Ihr Cloud Volumes Service für Google Cloud-Konto zugreifen kann.
+
+[role="quick-margin-para"]
+link:task-set-up-google-cloud.html#set-up-a-service-account["Erfahren Sie, wie Sie ein Service-Konto einrichten"].
+
+[role="quick-margin-para"]
+Klicken Sie in BlueXP auf *Arbeitsumgebung hinzufügen* > *Google Cloud* > *Cloud Volumes Service* und geben Sie dann Details zum Servicekonto und dem Google Cloud Projekt an.
+
+[role="quick-margin-para"]
+link:task-create-working-env.html["Lernen Sie, eine Arbeitsumgebung zu schaffen"].

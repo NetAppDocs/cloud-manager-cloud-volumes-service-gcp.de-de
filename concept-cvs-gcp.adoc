@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: concept-cvs-gcp.html 
+keywords: cloud volumes service for gcp, google cloud, cloud volumes, cloud volumes service subscription 
+summary: Mit NetApp Cloud Volumes Service für Google Cloud können Sie im Handumdrehen Multi-Protokoll-Workloads hinzufügen und sowohl Windows-basierte als auch UNIX-basierte Applikationen erstellen und implementieren. 
+---
+= Erfahren Sie mehr über Cloud Volumes Service für Google Cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mit NetApp Cloud Volumes Service für Google Cloud können Sie im Handumdrehen Multi-Protokoll-Workloads hinzufügen und sowohl Windows-basierte als auch UNIX-basierte Applikationen erstellen und implementieren.
+
+
+
+== Wichtige Funktionen
+
+* Migrieren von Daten zwischen On-Premises-Systemen und Google Cloud
+* Stellen Sie Volumes von 1 bis 100 tib in Sekundenschnelle bereit.
+* Multi-Protokoll-Unterstützung (ein NFS- oder SMB-Volume kann erstellt werden)
+* Sichern Sie Ihre Daten mit automatisierten, effizienten Snapshots.
+* Beschleunigte Applikationsentwicklung durch schnelles Klonen
+
+
+
+
+== Kosten
+
+Volumes, die im Cloud Volumes Service für Google Cloud erstellt wurden, werden für Ihr Abonnement des Services, nicht über BlueXP (früher Cloud Manager), in Rechnung gestellt.
+
+Es sind keine Kosten, eine Cloud Volumes Service für Google Cloud Region oder Volumen von BlueXP zu entdecken.
+
+link:https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com?q=cloud%20volumes%20service["Sehen Sie sich die Preise im Google Cloud Marketplace an"^]
+
+
+
+== Unterstützte Regionen
+
+https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["Unterstützte Google-Cloud-Regionen anzeigen"^]
+
+
+
+== Bevor Sie beginnen
+
+BlueXP kann vorhandene Cloud Volumes Service für GCP-Abonnements und -Volumes ermitteln. Siehe https://cloud.google.com/solutions/partners/netapp-cloud-volumes/["NetApp Cloud Volumes Service für Google Cloud - Dokumentation"^] Wenn Sie Ihr Abonnement noch nicht eingerichtet haben.
+
+
+
+== Hilfe wird abgerufen
+
+Verwenden Sie den BlueXP-Chat für allgemeine Fragen zum Betrieb von Cloud Volumes Service in BlueXP.
+
+Für allgemeine Fragen zu Cloud Volumes Service für Google Cloud senden Sie eine E-Mail an das Google Cloud Team von NetApp unter gcinfo@netapp.com.
+
+Bei technischen Problemen in Verbindung mit Ihren Cloud Volumes können Sie über die Google Cloud Console einen technischen Support-Case erstellen. Siehe link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/support["Support erhalten"^] Entsprechende Details.
+
+
+
+== Weiterführende Links
+
+* https://cloud.netapp.com/cloud-volumes-service-for-gcp["NetApp BlueXP: Cloud Volumes Service für Google Cloud"^]
+* https://cloud.google.com/solutions/partners/netapp-cloud-volumes/["NetApp Cloud Volumes Service für Google Cloud - Dokumentation"^]
+

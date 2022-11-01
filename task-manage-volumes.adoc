@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: task-manage-volumes.html 
+keywords: manage volumes, mount command, delete volume, edit volume, edit snapshot policy 
+summary: Sie können vorhandene Volumes managen, wenn sich Ihre Storage-Anforderungen ändern. Sie können Volumes anzeigen, bearbeiten, wiederherstellen und löschen. 
+---
+= Management vorhandener Volumes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können vorhandene Volumes managen, wenn sich Ihre Storage-Anforderungen ändern. Sie können Volumes anzeigen, bearbeiten, wiederherstellen und löschen.
+
+.Schritte
+. Öffnen Sie die Arbeitsumgebung.
+. Zeigen Sie den Mauszeiger auf das Volume.
++
+image:screenshot_cvs_gcp_volume_hover_menu.png["Ein Screenshot des Menüs „Volume Hover“, in dem Sie Volume-Aufgaben ausführen können"]
+
+. Managen Sie Ihre Volumes:
++
+[cols="30,70"]
+|===
+| Aufgabe | Aktion 
+
+
+| Anzeigen von Informationen zu einem Volume | Klicken Sie Auf *Info*. 
+
+
+| Bearbeiten eines Volumes (einschließlich Snapshot-Richtlinie)  a| 
+.. Klicken Sie Auf *Bearbeiten*.
+.. Ändern Sie die Eigenschaften des Volumes und klicken Sie dann auf *Update*.
+
+
+
+
+| Holen Sie den NFS- oder SMB-Mount-Befehl  a| 
+.. Klicken Sie auf *Montierung des Volumens*.
+.. Klicken Sie auf *Kopieren*, um den Befehl(en) zu kopieren.
+
+
+
+
+| Erstellen Sie bei Bedarf eine Snapshot Kopie  a| 
+.. Klicken Sie auf *Snapshot Kopie erstellen*.
+.. Ändern Sie ggf. den Namen und klicken Sie dann auf *Erstellen*.
+
+
+
+
+| Ersetzen Sie das Volume durch den Inhalt einer Snapshot Kopie  a| 
+.. Klicken Sie auf *Volume auf Snapshot zurücksetzen*.
+.. Wählen Sie eine Snapshot Kopie aus und klicken Sie auf *Wiederherstellen*.
+
+
+
+
+| Löschen einer Snapshot Kopie  a| 
+.. Klicken Sie auf *Snapshot Kopie löschen*.
+.. Wählen Sie den Snapshot aus und klicken Sie auf *Löschen*.
+.. Klicken Sie erneut auf *Löschen*, wenn Sie zur Bestätigung aufgefordert werden.
+
+
+
+
+| Löschen Sie ein Volume  a| 
+.. Heben Sie die Bereitstellung des Volumes von allen Clients ab:
++
+*** Verwenden Sie unter Linux-Clients das `umount` Befehl.
+*** Klicken Sie unter Windows-Clients auf *Netzlaufwerk trennen*.
+
+
+.. Wählen Sie ein Volume aus, und klicken Sie dann auf *Löschen*.
+.. Klicken Sie zur Bestätigung erneut auf *Löschen*.
+
+
+|===
+

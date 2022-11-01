@@ -1,0 +1,155 @@
+---
+sidebar: sidebar 
+permalink: task-create-volumes.html 
+keywords: cloud volumes service for gcp, google cloud, cloud volumes, create cloud volumes, mount volume 
+summary: Mit BlueXP können Sie Cloud Volumes auf Basis Ihres Cloud Volumes Service für Google Cloud Abonnements erstellen. Nachdem Sie ein Volume erstellt haben, erhalten Sie die entsprechenden Mount-Befehle, damit Sie das Volume an einen Client mounten können. 
+---
+= Erstellung und Mounten von Volumes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mit BlueXP können Sie Cloud Volumes auf Basis Ihres Cloud Volumes Service für Google Cloud Abonnements erstellen. Nachdem Sie ein Volume erstellt haben, erhalten Sie die entsprechenden Mount-Befehle, damit Sie das Volume an einen Client mounten können.
+
+
+
+== Volumes erstellen
+
+NFS- oder SMB-Volumes werden in einem neuen oder vorhandenen Cloud Volumes Service für Google Cloud Konto erstellt. Cloud Volumes unterstützen derzeit NFSv3 und NFSv4.1 für Linux- und UNIX-Clients und SMB 3.x für Windows-Clients.
+
+.Bevor Sie beginnen
+* Wenn Sie SMB in GCP verwenden möchten, müssen Sie DNS und Active Directory einrichten.
+* Wenn Sie planen, ein SMB-Volume zu erstellen, müssen Sie über einen Windows Active Directory-Server verfügen, mit dem Sie eine Verbindung herstellen können. Sie geben diese Informationen bei der Erstellung des Volumes ein. Stellen Sie außerdem sicher, dass der Admin-Benutzer in der Lage ist, ein Maschinenkonto im angegebenen Organisationseinheit-Pfad (OU) zu erstellen.
+
+
+.Schritte
+. Wählen Sie die Arbeitsumgebung aus und klicken Sie auf *Neues Volume hinzufügen*.
+. Geben Sie auf der Seite Details & Location Details zum Volume ein:
++
+.. Geben Sie einen Namen für das Volume ein.
+.. Geben Sie eine Größe im Bereich von 1 tib (1024 gib) bis 100 tib an.
++
+link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#allocated_capacity["Hier erhalten Sie weitere Informationen über zugewiesene Kapazität"^].
+
+.. Geben Sie ein Service-Level an: Standard, Premium oder Extreme.
++
+link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels["Erfahren Sie mehr über Service-Level"^].
+
+.. Wählen Sie die Google Cloud-Region aus.
+.. Wählen Sie das VPC-Netzwerk aus, auf das das Volume zugegriffen werden soll. Beachten Sie, dass die VPC nicht mehr geändert oder bearbeitet werden kann, nachdem das Volume erstellt wurde.
+.. Klicken Sie Auf *Weiter*.
++
+image:screenshot_cvs_gcp_vol_details_page.png["Ein Screenshot der Seite mit den Volume-Details, auf der Sie Name, Größe und Service Level angeben"]
+
+
+
+. Wählen Sie auf der Seite Protokoll NFS oder SMB aus und definieren Sie die Details. Erforderliche Einträge für NFS und SMB sind in separaten Abschnitten unten dargestellt.
+. Für NFS:
++
+.. Geben Sie im Feld Volume Path den Namen des Volume-Exports an, den Sie beim Mounten des Volumes sehen werden.
+.. Wählen Sie NFSv3, NFSv4.1 oder beides nach Ihren Anforderungen aus.
+.. Optional können Sie eine Exportrichtlinie erstellen, um die Clients zu identifizieren, die auf das Volume zugreifen können. Geben Sie Folgendes an:
++
+*** Zulässige Clients unter Verwendung einer IP-Adresse oder eines Classless Inter-Domain Routing (CIDR).
+*** Zugriffsrechte als Lese- und Schreibgeschützt.
+*** Zugriffsprotokoll (oder Protokolle, wenn das Volume sowohl NFSv3 als auch NFSv4.1 Zugriff ermöglicht) für Benutzer verwendet.
+*** Klicken Sie auf *+ Add Export Policy Rule*, wenn Sie zusätzliche Exportrichtlinien-Regeln definieren möchten.
++
+Das folgende Bild zeigt die für das NFS-Protokoll ausgefüllte Volume-Seite:
+
++
+image:screenshot_cvs_gcp_nfs_details.png["Ein Screenshot, der die Volume-Seite zeigt, die für ein NFS Cloud Volumes Service Volume ausgefüllt ist."]
+
+
+
+
+
+. Für SMB:
++
+.. Geben Sie im Feld Volume Path den Namen des Volume-Exports an, der beim Mounten des Volumes angezeigt wird, und klicken Sie auf *Continue*.
+.. Wenn Active Directory eingerichtet wurde, wird die Konfiguration angezeigt. Wenn es sich um das erste Volume handelt, das eingerichtet wurde und kein Active Directory eingerichtet wurde, können Sie die SMB-Sitzungsverschlüsselung auf der Seite SMB Connectivity Setup aktivieren:
++
+[cols="25,75"]
+|===
+| Feld | Beschreibung 
+
+
+| Primäre DNS-IP-Adresse | Die IP-Adressen der DNS-Server, die eine Namensauflösung für den SMB-Server angeben. Verwenden Sie ein Komma, um die IP-Adressen zu trennen, wenn Sie auf mehrere Server verweisen, z. B. 172.31.25.223, 172.31.2.74. 
+
+
+| Active Directory-Domäne, der Sie beitreten möchten | Der FQDN der Active Directory (AD)-Domäne, der der SMB-Server beitreten soll. 
+
+
+| SMB Server NetBIOS-Name | Ein NetBIOS-Name für den zu erstellenden SMB-Server. 
+
+
+| Anmeldeinformationen, die zur Aufnahme in die Domäne autorisiert sind | Der Name und das Kennwort eines Windows-Kontos mit ausreichenden Berechtigungen zum Hinzufügen von Computern zur angegebenen Organisationseinheit (OU) innerhalb der AD-Domäne. 
+
+
+| Organisationseinheit | Die Organisationseinheit innerhalb der AD-Domäne, die mit dem SMB-Server verknüpft werden soll. Die Standardeinstellung ist CN=Computer für Verbindungen zu Ihrem eigenen Windows Active Directory Server. 
+|===
++
+Das folgende Bild zeigt die für das SMB-Protokoll ausgefüllte Volume-Seite:
+
++
+image:screenshot_cvs_smb_details.png["Ein Screenshot, der die Seite des Volumes zeigt, die für ein SMB Cloud Volumes Service Volume ausgefüllt wurde."]
+
+
+
+. Klicken Sie Auf *Weiter*.
+. Wenn Sie das Volume auf Grundlage eines Snapshots eines vorhandenen Volumes erstellen möchten, wählen Sie den Snapshot aus der Dropdown-Liste Snapshot Name aus. Ansonsten klicken Sie einfach auf *Weiter*.
+. Sie können auf der Seite Snapshot-Richtlinie Cloud Volumes Service aktivieren, um auf Grundlage eines Zeitplans Snapshot-Kopien Ihrer Volumes zu erstellen. Sie können dies jetzt tun, indem Sie den Wahlschalter nach rechts verschieben oder das Volume später bearbeiten, um die Snapshot-Richtlinie zu definieren.
++
+Erfahren Sie, wie Sie link:task-manage-snapshots.html["Erstellen einer Snapshot-Richtlinie"].
+
+. Klicken Sie Auf *Volumen Hinzufügen*.
+
+
+Das neue Volumen wird der Arbeitsumgebung hinzugefügt.
+
+Weiterhin das Mounten des Cloud Volume fortsetzen.
+
+
+
+== Und Cloud Volumes mounten
+
+Greifen Sie in BlueXP auf die Montageanweisungen zu, damit Sie das Volume auf einen Host mounten können.
+
+
+NOTE: Verwenden Sie das hervorgehobene Protokoll/den von Ihrem Client unterstützten Dialekt.
+
+.Schritte
+. Öffnen Sie die Arbeitsumgebung.
+. Bewegen Sie den Mauszeiger über die Lautstärke und klicken Sie auf *Mounten Sie die Lautstärke*.
++
+Auf NFS- und SMB-Volumes werden Mount-Anweisungen für dieses Protokoll angezeigt.
+
+. Bewegen Sie den Mauszeiger über die Befehle und kopieren Sie sie in die Zwischenablage, um diesen Prozess zu vereinfachen. Fügen Sie einfach das Zielverzeichnis / den Bereitstellungspunkt am Ende des Befehls hinzu.
++
+*NFS-Beispiel:*
+
++
+image:screenshot_cvs_aws_nfs_mount.png["Mount-Anweisungen für NFS-Volumes"]
+
++
+Die von definierte maximale I/O-Größe `rsize` Und `wsize` Optionen sind 1048576, allerdings wird für die meisten Anwendungsfälle der empfohlene Standardwert von 65536 verwendet.
+
++
+Beachten Sie, dass Linux-Clients standardmäßig auf NFSv4.1 gesetzt werden, es sei denn, die Version wird mit dem angegeben `vers=<nfs_version>` Option.
+
++
+*SMB-Beispiel:*
+
++
+image:screenshot_cvs_aws_smb_mount.png["Mount-Anweisungen für SMB Volumes"]
+
+. Ordnen Sie Ihr Netzlaufwerk zu, indem Sie den Mount-Anweisungen für Ihre Instanz folgen.
++
+Nach Abschluss der Schritte in der Mount-Anleitung ist das Cloud-Volume erfolgreich in die GCP-Instanz eingebunden.
+
+

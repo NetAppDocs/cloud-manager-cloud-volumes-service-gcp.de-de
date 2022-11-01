@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: task-manage-active-directory.html 
+keywords: active directory, dns, domain, dns servers, smb server 
+summary: Wenn Sie Ihre DNS-Server oder Active Directory-Domäne geändert haben, müssen Sie den SMB-Server in Cloud Volumes Service ändern, damit er weiterhin Storage für Clients bereitstellen kann. 
+---
+= Managen Sie Ihre Active Directory-Konfiguration
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Wenn Sie Ihre DNS-Server oder Active Directory-Domäne geändert haben, müssen Sie den SMB-Server in Cloud Volumes Service ändern, damit er weiterhin Storage für Clients bereitstellen kann.
+
+.Schritte
+. Öffnen Sie die Arbeitsumgebung.
+. Klicken Sie auf das image:screenshot_gallery_options.gif["Ein Symbol mit drei Punkten"] Klicken Sie oben auf der Seite auf *Active Directory verwalten*.
++
+Wenn kein Active Directory konfiguriert ist, können Sie jetzt ein Verzeichnis hinzufügen. Wenn eine konfiguriert ist, können Sie die Einstellungen mit dem ändern oder löschen image:screenshot_gallery_options.gif["Ein Symbol mit drei Punkten"] Schaltfläche.
+
+. Legen Sie die Einstellungen für den SMB-Server fest:
++
+[cols="25,75"]
+|===
+| Feld | Beschreibung 
+
+
+| Primäre DNS-IP-Adresse | Die IP-Adressen der DNS-Server, die eine Namensauflösung für den SMB-Server angeben. Verwenden Sie ein Komma, um die IP-Adressen zu trennen, wenn Sie auf mehrere Server verweisen, z. B. 172.31.25.223, 172.31.2.74. 
+
+
+| Active Directory-Domäne, der Sie beitreten möchten | Der FQDN der Active Directory (AD)-Domäne, der der SMB-Server beitreten soll. 
+
+
+| SMB Server NetBIOS-Name | Ein NetBIOS-Name für den zu erstellenden SMB-Server. 
+
+
+| Anmeldeinformationen, die zur Aufnahme in die Domäne autorisiert sind | Der Name und das Kennwort eines Windows-Kontos mit ausreichenden Berechtigungen zum Hinzufügen von Computern zur angegebenen Organisationseinheit (OU) innerhalb der AD-Domäne. 
+
+
+| Organisationseinheit | Die Organisationseinheit innerhalb der AD-Domäne, die mit dem SMB-Server verknüpft werden soll. Die Standardeinstellung ist CN=Computer für Verbindungen zu Ihrem eigenen Windows Active Directory Server. 
+|===
+. Klicken Sie auf *Speichern*, um Ihre Einstellungen zu speichern.
+
