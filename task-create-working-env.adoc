@@ -23,6 +23,7 @@ Wenn bereits Cloud Volumes für dieses Abonnement vorhanden sind, werden die Vol
 
 TIP: Wenn Sie Abonnements und Volumes in mehreren Google Cloud-Projekten haben, müssen Sie diese Aufgabe für jedes Projekt ausführen.
 
+.Bevor Sie beginnen
 Beim Hinzufügen eines Abonnements für jedes Projekt müssen Sie über die folgenden Informationen verfügen:
 
 * Zugangsdaten für ein Servicekonto (JSON-privater Schlüssel, den Sie heruntergeladen haben)
@@ -48,6 +49,7 @@ image:screenshot_add_cvs_gcp_credentials.png["Screenshot mit den Zugangsdaten f�
 
 
 
+.Ergebnis
 BlueXP zeigt Ihre Arbeitsumgebung „Cloud Volumes Service for Google Cloud“ an.
 
 image:screenshot_cvs_gcp_cloud.png["Ein Screenshot von Cloud Volumes Service für die Google Cloud Arbeitsumgebung"]
@@ -56,4 +58,5 @@ Wenn bereits Cloud Volumes für dieses Abonnement vorhanden sind, werden die Vol
 
 Wenn für dieses Abonnement keine Cloud Volumes vorhanden sind, erstellen Sie sie jetzt.
 
+.Was kommt als Nächstes?
 link:task-create-volumes.html["Beginnen Sie mit der Erstellung von Volumes"].

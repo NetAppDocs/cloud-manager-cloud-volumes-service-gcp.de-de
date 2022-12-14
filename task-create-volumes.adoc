@@ -110,6 +110,7 @@ Erfahren Sie, wie Sie link:task-manage-snapshots.html["Erstellen einer Snapshot-
 . Klicken Sie Auf *Volumen Hinzufügen*.
 
 
+.Ergebnis
 Das neue Volumen wird der Arbeitsumgebung hinzugefügt.
 
 Weiterhin das Mounten des Cloud Volume fortsetzen.
